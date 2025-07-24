@@ -1,58 +1,162 @@
-<h2>Komm setz Dich zu uns</h2>
-
-<p><b>(H7*)</b> ––– <b>(Em)</b> ––– <b>(C)</b> ––– <b>(G)</b> ––– <b>(H7)</b> –––<br>
-<b>(Em)</b> ––– <b>(C)</b> ––– <b>(G)</b> ––– <b>(H7)</b> –––</p>
-
-<ol>
-<li>
-<p><b>(Em)</b> Komm, setz Dich zu uns ans <b>(C)</b> Feuer heut Nacht.<br>
-Die <b>(G)</b> Kälte vergeht, wenn ein <b>(H7)</b> Herz für dich lacht.<br>
-Kein <b>(Em)</b> Wort, das Du sagst, wird hier <b>(C)</b> falsch oder schwer.<br>
-Du <b>(G)</b> bist, wie Du bist, und wir <b>(H7)</b> fragen nicht mehr: ⬆⬆⬆⬆⬆⬆⬆⬆</p>
-
-<p><b>(Em)</b> Hier gibt’s keinen Himmel aus <b>(C)</b> Mauern, —<br>
-keine <b>(G)</b> Wahrheit, die Ketten ver- <b>(H7)</b> gibt. —<br>
-Hier sind <b>(Em)</b> wärmende Hände, die <b>(C)</b> tragen, —<br>
-und ein <b>(G)</b> Licht, dass das Dunkel be- <b>(H7)</b> siegt. —</p>
-</li>
-
-<p><b>(Em**)</b> ––– <b>(C)</b> ––– <b>(G)</b> ––– <b>(H7)</b> –––<br>
-<b>(Em)</b> ––– <b>(C)</b> ––– <b>(G)</b> ––– <b>(H7)</b> –––</p>
-
-<li>
-<p><b>(Em)</b> Die Sterne am Himmel, sie <b>(C)</b> fragen nicht viel.<br>
-Sie <b>(G)</b> leuchten für alle, ihr <b>(H7)</b> Licht hat kein Ziel.<br>
-Viel- <b>(Em)</b> leicht ist das Göttliche <b>(C)</b> gar nicht so weit.<br>
-Viel- <b>(G)</b> leicht gibt es Wunder im <b>(H7)</b> Teilen von Zeit. ⬆⬆⬆⬆⬆⬆⬆⬆</p>
-
-<p><b>(Em)</b> Hier gibt’s keinen Himmel aus <b>(C)</b> Mauern, —<br>
-keine <b>(G)</b> Wahrheit, die Ketten ver- <b>(H7)</b> gibt. —<br>
-Hier sind <b>(Em)</b> wärmende Hände, die <b>(C)</b> tragen, —<br>
-und ein <b>(G)</b> Licht, dass das Dunkel be- <b>(H7)</b> siegt. —</p>
-</li>
-
-<p><b>(Em**)</b> ––– <b>(C)</b> ––– <b>(G)</b> ––– <b>(H7)</b> –––<br>
-<b>(Em)</b> ––– <b>(C)</b> ––– <b>(G)</b> ––– <b>(H7)</b> –––</p>
-
-<p><b>(Em)</b> Hörst Du den Wind, wie er <b>(G)</b> leise erzählt.<br>
-<b>(G)</b> von einer Welt, die zu- <b>(H7)</b> sammenhält? —<br>
-<b>(Em)</b> Hörst Du den Ruf, der durch <b>(G)</b> uns jetzt erklingt?<br>
-<b>(G)</b> Menschsein verbindet und <b>(H7)</b> Frieden uns bringt. ⬆⬆⬆⬆⬆⬆⬆⬆</p>
-
-<p><b>(Em)</b> Hier gibt’s keinen Himmel aus <b>(C)</b> Mauern, —<br>
-keine <b>(G)</b> Wahrheit, die Ketten ver- <b>(H7)</b> gibt. —<br>
-Hier sind <b>(Em)</b> wärmende Hände, die <b>(C)</b> tragen, —<br>
-und ein <b>(G)</b> Licht, dass das Dunkel be- <b>(H7)</b> siegt. —</p>
-
-<p><b>(H7*)</b> ––– <b>(Em)</b> ––– <b>(C)</b> ––– <b>(G)</b> ––– <b>(H7)</b> –––<br>
-<b>(Em)</b> ––– <b>(C)</b> ––– <b>(G)</b> ––– <b>(H7)</b> ––– <b>(Em)</b> –––</p>
-
-<div id="song-end"></div>
-<script>
-  window.onload = () => {
-    const target = document.getElementById("song-end");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Songs</title>
+  <style>
+    body {
+      font-family: Calibri, sans-serif;
+      margin: 0;
+      padding: 0 1rem;
+      background: #fff;
+      color: #000;
     }
-  };
-</script>
+
+    .song-title {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .song-content {
+      display: none;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .chord {
+      font-weight: bold;
+      color: #ed7e01;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+      z-index: 999;
+      gap: 0.5rem;
+    }
+
+    .controls button {
+      font-family: Calibri, sans-serif;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid #ed7e01;
+      background: #fffaf2;
+      color: #ed7e01;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .controls button:hover {
+      background: #ed7e01;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="song-title" onclick="toggleSong('song1')">Shift Happens</div>
+  <div id="song1" class="song-content">
+( **A** ) We gathered not for profit, but for ( **F#m** ) purpose and for play,  
+( **Hm** ) In meadows full of meaning, where ( **E** ) new dreams find their way.  
+( **A** ) No suit, no tie, no pressure. Just ( **F#m** ) hearts that start to sing,  
+( **Hm** ) When people dare to question what ( **E** ) progress really brings.
+
+( **D** ) Shift happens and we ( **E** ) love it, oh yes, we ( **A** ) do!  
+( **D** ) We're dancing with the ( **E** ) planet in barefoot ( **A** ) shoes.  
+De- ( **D** ) growth, de- ( **E** ) light, and ( **F#m** ) daring dreams,  
+We ( **Hm** ) stitch the world with wilder ( **E** ) seams.  
+So ( **D** ) come along and ( **E** ) join the fuss,  
+This ( **Hm** ) beautiful mess is all of ( **E** ) us!  
+ba di bn di ( **A** ) du …
+
+  </div>
+
+  <div class="controls">
+    <button onclick="scrollStart()">▶ Play</button>
+    <button onclick="scrollPause()">⏸ Pause</button>
+    <button onclick="scrollToTop()">⏮ Zum Start</button>
+    <button onclick="scrollFaster()">+ schneller</button>
+    <button onclick="scrollSlower()">- langsamer</button>
+    <button onclick="transpose(+1)">▲ Transponieren</button>
+    <button onclick="transpose(-1)">▼ Transponieren</button>
+    <button onclick="toggleFullscreen()">[ ] Vollbild</button>
+  </div>
+
+  <script>
+    function toggleSong(id) {
+      const song = document.getElementById(id);
+      song.style.display = song.style.display === "none" ? "block" : "none";
+    }
+
+    let scrollSpeed = 1;
+    let scrollInterval;
+
+    function scrollStart() {
+      if (scrollInterval) return;
+      scrollInterval = setInterval(() => {
+        window.scrollBy(0, scrollSpeed);
+      }, 30);
+    }
+
+    function scrollPause() {
+      clearInterval(scrollInterval);
+      scrollInterval = null;
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function scrollFaster() {
+      scrollSpeed += 0.5;
+    }
+
+    function scrollSlower() {
+      scrollSpeed = Math.max(0.5, scrollSpeed - 0.5);
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    function transpose(step) {
+      const chords = document.querySelectorAll('.chord');
+      chords.forEach(chord => {
+        chord.textContent = transposeChord(chord.textContent, step);
+      });
+    }
+
+    const chordMap = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+    function transposeChord(chord, step) {
+      const match = chord.match(/^([A-G][#b]?)(.*)/);
+      if (!match) return chord;
+      const [_, root, rest] = match;
+      let index = chordMap.indexOf(root.replace('B', 'H')); // Deutsch: B → H
+      if (index === -1) index = chordMap.indexOf(root);
+      const newIndex = (index + step + 12) % 12;
+      return chordMap[newIndex].replace('H', 'B') + rest;
+    }
+
+    // Akkorde als span.chord formatieren
+    document.body.innerHTML = document.body.innerHTML.replace(/\(\s*\*\*(.*?)\*\*\s*\)/g, (_, chord) => {
+      return `<span class="chord">(${chord.trim()})</span>`;
+    });
+  </script>
+
+</body>
+</html>
