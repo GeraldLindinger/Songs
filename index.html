@@ -1,100 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>Shift Happens (deutsch)</title>
+  <meta charset="UTF-8">
+  <title>Geralds Lieder</title>
   <style>
     body {
       font-family: Calibri, sans-serif;
-      padding: 20px;
-      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 2em;
     }
-    .chord {
+    h1 {
+      color: #ed7e01;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 1em 0;
+    }
+    a {
       color: #ed7e01;
       font-weight: bold;
+      text-decoration: none;
     }
-    #controls {
-      margin-bottom: 20px;
-    }
-    #controls button {
-      margin-right: 8px;
-      padding: 6px 12px;
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
-<h2>Shift Happens (deutsch)</h2>
-
-<div id="controls">
-  <button onclick="startScroll()">▶ Play</button>
-  <button onclick="stopScroll()">⏸ Pause</button>
-  <button onclick="resetScroll()">⏮ Zum Start</button>
-  <button onclick="faster()">+ Schneller</button>
-  <button onclick="slower()">– Langsamer</button>
-  <button onclick="toggleFullscreen()">[ ] Vollbild</button>
-</div>
-
-<div id="song" style="max-height: 400px; overflow-y: auto;">
-  <span class="chord">(A)</span> Wir trafen uns im Morgen, wo <span class="chord">(F#m)</span> leiser Zauber liegt,<br>
-  <span class="chord">(Hm)</span> Wo nichts als warme Stimmen durch <span class="chord">(E)</span> off’ne Himmel fliegt.<br>
-  <span class="chord">(A)</span> Kein Plan, kein Ziel, nur Sehnsucht, die <span class="chord">(F#m)</span> heimlich Lieder spinnt,<br>
-  <span class="chord">(Hm)</span> Wenn sanfte Träume flüstern, dass <span class="chord">(E)</span> wir noch Kinder sind.<br><br>
-
-  <span class="chord">(D)</span> Der Wind weht – und wir <span class="chord">(E)</span> folgen ihm im <span class="chord">(A)</span> Spiel,<br>
-  Mit <span class="chord">(D)</span> nackten Zehen <span class="chord">(E)</span> auf dem Lebens-<span class="chord">(A)</span>ziel.<br>
-  Ver-<span class="chord">(D)</span>wunschen, ver-<span class="chord">(E)</span>rückt und <span class="chord">(F#m)</span> federleicht –<br>
-  Ein <span class="chord">(Hm)</span> Tanz, der durch die Seele <span class="chord">(E)</span> streicht.<br>
-  So <span class="chord">(D)</span> komm doch, <span class="chord">(E)</span> hüpf ins <span class="chord">(F#m)</span> bunte Nass –<br>
-  Dies <span class="chord">(Hm)</span> Chaos ist ein Zauber-<span class="chord">(E)</span>Fass! – ba di bn di <span class="chord">(A)</span> du...
-</div>
-
-<script>
-  let scrollInterval = null;
-  let scrollSpeed = 50;
-
-  function startScroll() {
-    if (!scrollInterval) {
-      scrollInterval = setInterval(() => {
-        document.getElementById("song").scrollTop += 1;
-      }, scrollSpeed);
-    }
-  }
-
-  function stopScroll() {
-    clearInterval(scrollInterval);
-    scrollInterval = null;
-  }
-
-  function resetScroll() {
-    document.getElementById("song").scrollTop = 0;
-  }
-
-  function faster() {
-    if (scrollSpeed > 10) scrollSpeed -= 10;
-    restartScroll();
-  }
-
-  function slower() {
-    scrollSpeed += 10;
-    restartScroll();
-  }
-
-  function restartScroll() {
-    stopScroll();
-    startScroll();
-  }
-
-  function toggleFullscreen() {
-    const el = document.documentElement;
-    if (!document.fullscreenElement) {
-      el.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    }
-  }
-</script>
-
+  <h1>🎵 Willkommen auf Geralds Liedersammlung</h1>
+  <p>Hier findest du alle Lieder mit Akkorden, Texten und Scroll-Funktion:</p>
+  <ul>
+    <li><a href="shift-happens.html">Shift Happens</a></li>
+    <!-- Weitere Songs kannst du hier einfach hinzufügen -->
+  </ul>
 </body>
 </html>
